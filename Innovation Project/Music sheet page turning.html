@@ -2,12 +2,10 @@
   <head>
     <title>Music sheet page turning</title>
   </head>
-
   <body>
     <!--This draws the canvas on the webpage -->
     <canvas id="mycanvas"></canvas>
   </body>
-
   <!-- Include the processing.js library -->
   <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
   <script>
@@ -17,7 +15,6 @@
         with (processingInstance) {
           size(window.innerWidth, window.innerHeight);
           frameRate(30);
-
           var page1 = loadImage("music-1.png");
           var page2 = loadImage("music-2.png");
           var beatsPerSecond = tempo / 60;
@@ -32,10 +29,7 @@
             
             background(255, 255, 255);
             image(pages[i], 300, 200);
-            fill(0, 0, 0);
-            ellipse(mouseX, mouseY, 12, 12);
-            var label = mouseX + "," + mouseY;
-            text(label, mouseX + 11, mouseY);
+
 
             strokeWeight(5);
             line(x, 229, x, 262);
@@ -48,8 +42,6 @@
     // Pass the function to ProcessingJS constructor
     var processingInstance = new Processing(canvas, programCode);
     }
-
-
   </script>
   <button onclick="start();">start</button>
 </html>
